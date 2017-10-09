@@ -1,12 +1,11 @@
 //<script>
-alert("Un mensaje de prueba");
+alert("Ejercicio 1 - Cifrado César");
 // declaro variables e inicializo
 var parameter=33;  // parametro fijo
 var sentence='';   // frase
 var option=0;      // opcion
 var validate1=false; // captura resultado de función validación de frase
 var validate2=false; // captura resultado de función validación de opción
-
 
 // solicita frase y llama a la función para validar frase
 validate1=validaSentence(sentence= prompt('Ingrese Frase: '));
@@ -29,16 +28,19 @@ if ( validate1===true & validate2===true){
 }
 // función que valida frase ingresada, devuelve verdadero/ false
 function validaSentence(sentenceV){
+
   if (sentenceV.length !== '' ){
-      console.log('No ingresó frase');
+      console.log('Frase Correcta');
+      var a=0;
 
       for (var i=0 ; i< sentenceV.length ; i++){
           var temp=sentenceV.substr(i,1);
+          a=parseInt(temp);
 
-          if ( temp!==' '& typeof parseInt(temp) !== 'number'){
-              return true ;
-          }else{
+          if ( temp === ' ' || typeof a === 'number' ){
               return false ;
+          }else{
+              return true ;
           }
       }
   }else{
